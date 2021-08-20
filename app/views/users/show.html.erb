@@ -2,8 +2,10 @@
 <p><strong> Name: </strong><%= @user.username %></p>
 <p><strong>Email:</strong><%= @user.email %> </p>
 <% if logged_in? %> 
-    <%= link_to current_user.username, user_path%> |
+    <%= link_to 'Edit Profile', edit_user_path(current_user) %> |
     <%= link_to 'logout', logout_path, method: :delete %>
 <% else %>
-    <%= link_to 'Login', login_path() %> |
+    <%= link_to 'Login', login_path() %>
 <% end %>
+<%= render 'articles/article' %>
+<%= link_to 'Bloggers', users_path() %>
